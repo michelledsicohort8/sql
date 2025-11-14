@@ -125,12 +125,17 @@ When inserting the new vendor, you need to appropriately align the columns to be
 VALUES(col1,col2,col3,col4,col5) 
 */
 
-DROP TABLE IF EXISTS temp.new_vendor
-CREATE temp.new_vendor AS
+DROP TABLE IF EXISTS temp.new_vendor;
+CREATE TABLE temp.new_vendor AS
 SELECT *
-VALUES 
-FROM vendor
-SELECT * FROM new_vendor;
+FROM vendor;
+
+INSERT INTO temp.new_vendor
+VALUES (10,'Thomas Superfood Store','Fresh Focused','Thomas','Rosenthal')
+
+SELECT *
+FROM temp.new_vendor
+
 
 
 -- Date
